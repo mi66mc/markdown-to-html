@@ -1,4 +1,5 @@
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import React, { useState } from 'react';
 import './App.css';
 
@@ -12,7 +13,7 @@ function App() {
         onChange={(e) => setInput(e.target.value)}
         spellcheck="false"
         placeholder="Markdown code..."/>
-      <ReactMarkdown children={input} className="markdown"/>
+      <ReactMarkdown children={input} className="markdown" remarkPlugins={[remarkGfm]}/>
     </div>
   );
 }
